@@ -91,7 +91,7 @@ console.log(inventory[lastCar]);
 const carModels = inventory.map(function(car){
   return car.car_model;
 })
-console.log(carModels);
+// console.log(carModels);
 
 let carModelsSorted = carModels.sort();
 console.log(carModelsSorted);
