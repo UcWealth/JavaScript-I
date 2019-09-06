@@ -88,26 +88,40 @@ console.log(Antonietta.multiplyNums(3,5));
 // 3. Nest a grandchild object in the child object with properties for name and age.  The name will be Sam and the age will be 30
 // 4. Give each of the objects the ability to speak their names using the this keyword.
 
-const parent = {
-  name: 'Susan',
-  age: 70,
-  child: {
-    name: 'George',
-    age: 50,
-    grandchild: {
-      name: 'Sam',
-      age: 30
-    },
-    // speak: speak()
-  },
-  speak: function() {
-    return (`My name is ${this.name}`);
-  }
+function Boss(name,age) {
+    this.name = name;
+    this.age = age;
+
+  this.speak = () => { return `My name is ${this.name}`};
 }
+
+let parent = new Boss('Susan', 70);
+let child = new Boss('George', 50);
+let grandchild = new Boss('Sam', 30);
+console.log(parent, child, grandchild);
+
+// const parent = {
+//   name: 'Susan',
+//   age: 70,
+//   child: {
+//     name: 'George',
+//     age: 50,
+//     speak
+//    }.bind(this),
+//     grandchild: {
+//       name: 'Sam',
+//       age: 30
+//     },
+//   speak: function() {
+//        return (`My name is ${this.name}`);
+//     },
+// }
 
 // Log the parent object's name
 console.log(parent.name);
 console.log(parent.speak());
+// console.log(parent.child.speak());
+// console.log(parent.child.speak());
 
 // Log the child's age
 
